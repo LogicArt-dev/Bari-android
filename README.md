@@ -1,33 +1,23 @@
-# Bari Android
+# بارع Bari
 
-The Android application for Bari, built with Kotlin and Jetpack Compose.
+Bari is a bilingual Android file manager built with a single Android application
+module, Kotlin, Jetpack Compose, and Material 3.
 
-## Requirements
+## Toolchain
 
-- JDK 17
-- Android SDK Platform 36 and Android SDK Build-Tools
+- Java 17
+- Android Gradle Plugin 8.13.2
+- Gradle wrapper 8.13
+- Kotlin and Compose compiler plugin 2.3.21
+- Android SDK 36 (minimum SDK 26)
 
-The Gradle wrapper downloads Gradle 8.13 automatically. Android Gradle Plugin
-8.13.2 is used by the project.
+Use the checked-in wrapper for Gradle tasks:
 
-## Build
-
-```shell
-./gradlew assembleDebug
+```sh
+./gradlew :app:assembleDebug
+./gradlew :app:testDebugUnitTest
 ```
 
-The debug APK is written to `app/build/outputs/apk/debug/app-debug.apk`.
+The app's storage browser uses Android's all-files access where supported and
+user-selected Storage Access Framework trees as a complementary route.
 
-Run the configured unit-test task with:
-
-```shell
-./gradlew test
-```
-
-## Project notes
-
-- The application module is `app`; its namespace and application ID are
-  `com.logicart.bari`.
-- `minSdk` is provisionally set to 26 and must be reviewed before release.
-- Android SDK location is provided locally through `local.properties` or the
-  `ANDROID_HOME` environment variable. `local.properties` is not committed.

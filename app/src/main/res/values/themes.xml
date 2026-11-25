@@ -1,5 +1,0 @@
-<resources>
-    <style name="Theme.Bari" parent="android:style/Theme.Material.Light.NoActionBar">
-        <item name="android:colorAccent">#6750A4</item>
-    </style>
-</resources>
