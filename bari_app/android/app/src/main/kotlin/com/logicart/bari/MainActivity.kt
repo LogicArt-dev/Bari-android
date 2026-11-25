@@ -15,8 +15,11 @@ class MainActivity : FlutterActivity() {
         ).setMethodCallHandler { call, result ->
             when (call.method) {
                 "getStoragePermissionStatus" -> result.success(
-                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.R &&
-                        Environment.isExternalStorageManager
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                        Environment.isExternalStorageManager()
+                    } else {
+                        true
+                    }
                 )
                 else -> result.notImplemented()
             }
